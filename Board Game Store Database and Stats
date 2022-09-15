@@ -1,0 +1,22 @@
+--Create a board game store database
+
+create table board_games (id integer primary key, name text, price integer, minutes_to_complete numeric, difficulty text);
+
+insert into board_games values
+(1, "GOT", 23, 30, "med"),
+(2, "Janga", 25, 10, "low"),
+(3, "Scrabble", 20, 90, "high"),
+(4, "Twister", 19, 40, "med"),
+(5, "Cranium", 30, 90, "med");
+
+--Display the whole board game store database
+select * from board_games;
+
+--How much time is required to complete each game?
+select * from board_games order by minutes_to_complete;
+
+--How much is each board game price in descending order?
+select name, price from board_games order by price desc;
+
+--What is the average price of all board games?
+select avg(price) “average price of all board games” from board_games;
